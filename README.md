@@ -6,7 +6,7 @@ OmniMemEval is an evaluation framework for memory systems and memory-augmented a
 
 | Track | Evaluation Target | Benchmarks / Domains | Documentation |
 |---|---|---|---|
-| User Memory Evaluation | Memory backend APIs exposed through `add()`, `search()`, and `delete()` | LoCoMo, LongMemEval, BEAM, PersonaMem v2, HaluMem | [docs/user_memory/README.md](./docs/user_memory/README.md) |
+| User Memory Evaluation | Memory backend APIs exposed through `add()` and `search()` | LoCoMo, LongMemEval, BEAM, PersonaMem v2, HaluMem | [docs/user_memory/README.md](./docs/user_memory/README.md) |
 | Agent Memory Evaluation | Agent runtimes equipped with memory plugins | AgentBench domains: reasoning, information retrieval, knowledge work, code implementation, software engineering | [docs/agent_memory/README.md](./docs/agent_memory/README.md) |
 
 ## Evaluation Tracks
@@ -90,18 +90,24 @@ huggingface-cli download EverMind-AI/EvoAgentBench \
 ```text
 configs/
   agentbench/                 # Agent Memory Evaluation configs
-data/                         # User Memory benchmark data preparation
+data/
+  locomo/ longmemeval/ beam/  # User Memory benchmark data preparation
+  personamem_v2/ halumem/
 docs/
-  user_memory/README.md       # User Memory Evaluation guide
-  agent_memory/README.md      # Agent Memory Evaluation guide
+  user_memory/                # User Memory Evaluation guides (EN/ZH)
+  agent_memory/               # Agent Memory Evaluation guides and results (EN/ZH)
   benchmark-results.md        # User Memory public result snapshot
-env_examples/                 # Environment templates for memory backends and agent evaluation
+  agentbench-migration-design.md # AgentBench migration design notes
+env_examples/                 # Environment templates and parameter docs
 scripts/
   agentbench/                 # AgentBench runner implementation
   client_factory/             # User Memory backend adapters
   locomo/ longmemeval/ beam/  # User Memory benchmark pipelines
   personamem_v2/ halumem/
-results/                      # Evaluation outputs
+  tests/                      # Test suite
+  utils/                      # Shared utilities
+requirements_user_memory.txt  # User Memory Evaluation dependencies
+requirements_agentbench.txt   # Agent Memory Evaluation dependencies
 ```
 
 ## License

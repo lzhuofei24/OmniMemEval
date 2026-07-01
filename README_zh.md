@@ -6,7 +6,7 @@ OmniMemEval 是面向记忆系统和记忆增强 Agent 的评测框架，当前�
 
 | 评测线 | 评测对象 | Benchmark / 任务域 | 文档 |
 |---|---|---|---|
-| User Memory Evaluation | 通过 `add()`、`search()`、`delete()` 暴露能力的 memory backend API | LoCoMo、LongMemEval、BEAM、PersonaMem v2、HaluMem | [docs/user_memory/README_zh.md](./docs/user_memory/README_zh.md) |
+| User Memory Evaluation | 通过 `add()` 和 `search()` 暴露能力的 memory backend API | LoCoMo、LongMemEval、BEAM、PersonaMem v2、HaluMem | [docs/user_memory/README_zh.md](./docs/user_memory/README_zh.md) |
 | Agent Memory Evaluation | 安装记忆插件后的 Agent Runtime | AgentBench domains：reasoning、information retrieval、knowledge work、code implementation、software engineering | [docs/agent_memory/README_zh.md](./docs/agent_memory/README_zh.md) |
 
 ## 评测线
@@ -90,19 +90,24 @@ huggingface-cli download EverMind-AI/EvoAgentBench \
 ```text
 configs/
   agentbench/                 # Agent Memory Evaluation 配置
-data/                         # User Memory benchmark 数据准备
+data/
+  locomo/ longmemeval/ beam/  # User Memory benchmark 数据准备
+  personamem_v2/ halumem/
 docs/
-  user_memory/README.md       # User Memory Evaluation 文档
-  agent_memory/README.md      # Agent Memory Evaluation 英文文档
-  agent_memory/README_zh.md   # Agent Memory Evaluation 中文文档
+  user_memory/                # User Memory Evaluation 中英文文档
+  agent_memory/               # Agent Memory Evaluation 中英文文档和结果
   benchmark-results.md        # User Memory 公开结果快照
-env_examples/                 # memory backend 和 agent evaluation 环境变量模板
+  agentbench-migration-design.md # AgentBench 迁移设计文档
+env_examples/                 # 环境变量模板和参数说明
 scripts/
   agentbench/                 # AgentBench runner 实现
-  client_factory/             # User Memory backend adapters
-  locomo/ longmemeval/ beam/  # User Memory benchmark pipelines
+  client_factory/             # User Memory backend 适配器
+  locomo/ longmemeval/ beam/  # User Memory benchmark 流水线
   personamem_v2/ halumem/
-results/                      # 评测输出
+  tests/                      # 测试套件
+  utils/                      # 通用工具
+requirements_user_memory.txt  # User Memory Evaluation 依赖
+requirements_agentbench.txt   # Agent Memory Evaluation 依赖
 ```
 
 ## License
