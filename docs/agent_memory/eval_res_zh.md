@@ -36,7 +36,7 @@ OpenClaw 和 Hermes 回答模型配置：qwen3.6-flash no_thinking 模式。
 
 ### OpenClaw
 
-| **Method** | BrowseComp-Plus Acc | BrowseComp-Plus Avg turns | OmniMath <br>Acc | OmniMath Cost <br>Avg chars（单位：k tokens） | SWE-Bench <br>Acc | SWE-Bench <br>Avg turns | LiveCodeBench <br>Acc | LiveCodeBench Avg turns | GDPVal <br>Acc | GDPVal <br>Avg turns |
+| **Method** | BrowseComp-Plus Acc | BrowseComp-Plus Avg turns | OmniMath <br>Acc | OmniMath Cost <br>Avg chars | SWE-Bench <br>Acc | SWE-Bench <br>Avg turns | LiveCodeBench <br>Acc | LiveCodeBench Avg turns | GDPVal <br>Acc | GDPVal <br>Avg turns |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Baseline** | 18.46 | 35.1 | 52 | 5658.6 | 26.92 | 58.8 | 51.28 | 23.9 | 34.48 | 17.2 |
 | **Mem0** | 13.33 | 36.4 | 53 | 6090.53 | 26.92 | 55.78 | 60.68 | 6.27 | 41.38 | 17.28 |
@@ -49,7 +49,7 @@ OpenClaw 和 Hermes 回答模型配置：qwen3.6-flash no_thinking 模式。
 
 ### Hermes
 
-| **Method** | BrowseComp-Plus Acc | BrowseComp-Plus Avg turns | OmniMath <br>Acc | OmniMath Cost <br>Avg chars（单位：k tokens） | SWE-Bench <br>Acc | SWE-Bench <br>Avg turns | LiveCodeBench <br>Acc | LiveCodeBench Avg turns | GDPVal <br>Acc | GDPVal <br>Avg turns |
+| **Method** | BrowseComp-Plus Acc | BrowseComp-Plus Avg turns | OmniMath <br>Acc | OmniMath Cost <br>Avg chars | SWE-Bench <br>Acc | SWE-Bench <br>Avg turns | LiveCodeBench <br>Acc | LiveCodeBench Avg turns | GDPVal <br>Acc | GDPVal <br>Avg turns |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Baseline** | 18.97 | 43.23 | 62 | 10872.8 | 37.18 | 84.93 | 52.99 | 22.27 | 54.6 | 62.57 |
 | **Mem0** | 17.95 | 42.73 | 64.33 | 11740 | 34.62 | 94.37 | 57.26 | 25.63 | 56.9 | 57.73 |
