@@ -218,10 +218,11 @@ class MemosClient(BaseApiClient):
         explicit_prefs = []
         implicit_prefs = []
         for pref in pref_mem_res:
+            pref_text = pref.get("memory_value") or pref.get("preference") or ""
             if pref["preference_type"] == "explicit_preference":
-                explicit_prefs.append(pref["preference"])
+                explicit_prefs.append(pref_text)
             elif pref["preference_type"] == "implicit_preference":
-                implicit_prefs.append(pref["preference"])
+                implicit_prefs.append(pref_text)
 
         if explicit_prefs:
             pref_parts.append(
@@ -283,7 +284,15 @@ class MemosClient(BaseApiClient):
     @classmethod
     def _format_local_search_data(cls, data):
         if "memory_detail_list" in data:
-            return cls._format_cloud_search_data(data)
+            local_data = dict(data)
+            local_data["preference_detail_list"] = [
+                {
+                    **pref,
+                    "preference": pref.get("memory") or pref.get("preference") or "",
+                }
+                for pref in data.get("preference_detail_list") or []
+            ]
+            return cls._format_cloud_search_data(local_data)
 
         parts = []
         parts.extend(cls._format_local_bucket_list(data.get("text_mem"), label=None))

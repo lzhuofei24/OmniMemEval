@@ -102,13 +102,20 @@ class TestMemosLocalFormatting(unittest.TestCase):
     def test_format_local_search_data_accepts_cloud_shape(self):
         data = {
             "memory_detail_list": [{"memory_value": "Cloud-shaped memory."}],
-            "preference_detail_list": [],
+            "preference_detail_list": [
+                {
+                    "preference_type": "explicit_preference",
+                    "memory": "Local product preference memory value.",
+                    "preference": "Short local preference.",
+                }
+            ],
         }
 
-        self.assertEqual(
-            MemosClient._format_local_search_data(data),
-            "Cloud-shaped memory.",
-        )
+        text = MemosClient._format_local_search_data(data)
+
+        self.assertIn("Cloud-shaped memory.", text)
+        self.assertIn("Local product preference memory value.", text)
+        self.assertNotIn("Short local preference.", text)
 
     def test_format_local_search_data_includes_local_pref_note(self):
         data = {
@@ -135,6 +142,28 @@ class TestMemosCloudSearch(unittest.TestCase):
     def tearDown(self):
         os.environ.clear()
         os.environ.update(self._old_env)
+
+    def test_format_cloud_search_data_prefers_preference_memory_value(self):
+        data = {
+            "memory_detail_list": [],
+            "preference_detail_list": [
+                {
+                    "preference_type": "explicit_preference",
+                    "memory_value": "Context summary for the coffee shop preference.",
+                    "preference": "Short preference only.",
+                },
+                {
+                    "preference_type": "implicit_preference",
+                    "preference": "Fallback implicit preference.",
+                },
+            ],
+        }
+
+        text = MemosClient._format_cloud_search_data(data)
+
+        self.assertIn("Context summary for the coffee shop preference.", text)
+        self.assertIn("Fallback implicit preference.", text)
+        self.assertNotIn("Short preference only.", text)
 
     def test_search_cloud_sends_context_format_and_tool_memory_options(self):
         class Response:
