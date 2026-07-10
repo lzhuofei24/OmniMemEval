@@ -4,6 +4,22 @@ OmniMemEval code is licensed under the repository [LICENSE](./LICENSE). Benchmar
 datasets keep their upstream licenses. The OmniMemEval code license does not
 relicense external datasets.
 
+## EvoAgentBench / Agent Memory Evaluation
+
+- Project: https://github.com/EverMind-AI/EvoAgentBench
+- Dataset: https://huggingface.co/datasets/EverMind-AI/EvoAgentBench
+- Paper: https://arxiv.org/abs/2607.05202
+- Data used by default: files downloaded under `data/agentbench/` for the
+  BrowseComp-Plus, Reasoning & Problem Decomposition, gdpval, livecode, and
+  swebench domains
+- License: Apache License 2.0
+- Notes: EvoAgentBench data is not committed to this repository. Run
+  the Hugging Face download command documented in `README.md` to download it
+  from upstream. The dataset card describes task splits across BrowseCompPlus,
+  OmniMath, SWE-Bench, LiveCodeBench, and GDPVal. Users should review and
+  comply with EvoAgentBench's license and any upstream terms for the underlying
+  benchmark assets.
+
 ## LoCoMo
 
 - Source: https://github.com/snap-research/locomo
