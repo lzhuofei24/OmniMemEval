@@ -1,5 +1,7 @@
 # LoCoMo Dataset
 
+[User Memory Evaluation guide](../../docs/user_memory/README.md)
+
 LoCoMo (Long Conversation Memory) is a benchmark dataset for evaluating
 long-conversation memory capabilities. OmniMemEval uses 10 conversation samples
 from the [original LoCoMo dataset](https://github.com/snap-research/locomo) to

@@ -1,5 +1,7 @@
 # HaluMem Dataset
 
+[User Memory Evaluation guide](../../docs/user_memory/README.md)
+
 HaluMem is the first benchmark specifically designed for evaluating **operation-level hallucinations in memory systems**. It decomposes memory systems into three core operations — memory extraction, memory update, and memory QA — and introduces distractor content to test robustness under noisy conditions.
 
 - Paper: [HaluMem: A Comprehensive Benchmark for Evaluating Hallucinations in Memory Systems](https://arxiv.org/abs/2511.03506)

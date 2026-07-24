@@ -1,6 +1,12 @@
 # AgentBench 评测结果
 
-[English](./eval_res.md)
+[English](./results.md)
+
+[Agent Memory Evaluation 指南](./README_zh.md) ·
+[架构](./architecture_zh.md)
+
+以下表格记录 OpenClaw 和 Hermes 两套评测设置。当前公开的 Agent Memory Runner
+指南和已注册 Runtime Adapter 覆盖 OpenClaw。
 
 ## 评测指标
 

@@ -1,5 +1,7 @@
 # PersonaMem v2 Dataset
 
+[User Memory Evaluation guide](../../docs/user_memory/README.md)
+
 PersonaMem v2 is a persona-centric personalized memory benchmark that evaluates whether LLMs can adapt responses based on user traits, preferences, and interaction history across multi-session conversations. Published by University of Pennsylvania.
 
 - Paper: [PersonaMem-v2: Towards Personalized Intelligence via Learning Implicit User Personas and Agentic Memory](https://arxiv.org/abs/2512.06688)
@@ -14,7 +16,7 @@ PersonaMem v2 is a persona-centric personalized memory benchmark that evaluates 
 | `benchmark/text/benchmark.csv` | ~40.5 MB | Benchmark set: 5,000 user queries across 200 personas |
 | `benchmark/text/train.csv` | ~149.8 MB | Training set: 18,549 queries (no persona overlap with benchmark) |
 | `benchmark/text/val.csv` | ~16.7 MB | Validation set: 2,061 queries (no persona overlap with benchmark) |
-| `column_descriptions.md` | ~3.7 KB | Detailed field descriptions for CSV columns |
+| [`column_descriptions.md`](./column_descriptions.md) | ~3.7 KB | Detailed field descriptions for CSV columns |
 | `combined_irrelevant_data.json` | ~1.0 MB | 1,545 irrelevant conversation snippets (math/coding) for context padding |
 | `data/chat_history_32k/` | — | 32K-token context chat histories (1 per persona) |
 | `data/chat_history_128k/` | — | 128K-token context chat histories (1 per persona) |
@@ -53,7 +55,7 @@ and should remain local.
 | `updated` | Whether the preference has been updated |
 | `sensitive_info` | Whether sensitive information is involved |
 
-See `column_descriptions.md` for the complete field reference.
+See [`column_descriptions.md`](./column_descriptions.md) for the complete field reference.
 
 ## Preference Type Distribution
 

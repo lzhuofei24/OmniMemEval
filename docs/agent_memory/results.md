@@ -1,6 +1,12 @@
 # AgentBench Evaluation Results
 
-[Chinese](./eval_res_zh.md)
+[Chinese](./results_zh.md)
+
+[Agent Memory Evaluation guide](./README.md) ·
+[Architecture](./architecture.md)
+
+These tables record OpenClaw and Hermes evaluation setups. The current public
+Agent Memory runner guide and registered runtime adapter cover OpenClaw.
 
 ## Metrics
 

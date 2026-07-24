@@ -1,5 +1,7 @@
 # BEAM Dataset
 
+[User Memory Evaluation guide](../../docs/user_memory/README.md)
+
 BEAM (Beyond a Million Tokens) is a long-term memory benchmark designed for **extreme-length scenarios**, covering four scales from 128K to 10M tokens. Published by Université de Montréal et al. at ICLR 2026.
 
 - Paper: [Beyond a Million Tokens: Benchmarking and Enhancing Long-Term Memory in LLMs](https://arxiv.org/abs/2510.27246) (ICLR 2026)

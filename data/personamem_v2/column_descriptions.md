@@ -1,4 +1,4 @@
-## Column Descriptions
+# PersonaMem v2 Column Descriptions
 
 ### Basic Information
 - **`persona_id`**: Unique identifier for each persona (0–999).  

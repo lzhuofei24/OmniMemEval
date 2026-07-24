@@ -1,13 +1,16 @@
-# OmniMemEval AgentBench
+# Agent Memory Evaluation
 
 [English](./README.md)
+
+[文档索引](../README_zh.md)
 
 AgentBench 是 OmniMemEval 中面向 Agent Runtime 的评测模块，用于评估 OpenClaw 在五个任务域上的任务完成能力，并支持在相同任务集合上独立评测记忆插件。当前提供以下评测协议：
 
 - plain AgentBench：不启用待测记忆插件，执行 `test_only` 或 `train_then_test`。
 - memory plugin AgentBench：按 `memory_train_backup_test` 协议清理、训练、等待沉淀、备份、恢复并测试记忆。
 
-评测结果见 [eval_res_zh.md](./eval_res_zh.md)。
+评测结果见 [results_zh.md](./results_zh.md)。当前架构和扩展契约见
+[architecture_zh.md](./architecture_zh.md)。
 
 ## 数据来源声明
 
@@ -349,4 +352,4 @@ results/agentbench/openclaw-memos-memos_5domain_eval-reasoning/
 
 ## 验证结果
 
-5 域评测结果见 [eval_res_zh.md](./eval_res_zh.md)。模型服务、外部 judge 服务和 embedding 服务状态均可能影响单条样本 reward。
+5 域评测结果见 [results_zh.md](./results_zh.md)。模型服务、外部 judge 服务和 embedding 服务状态均可能影响单条样本 reward。

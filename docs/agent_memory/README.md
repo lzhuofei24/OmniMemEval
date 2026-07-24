@@ -2,9 +2,12 @@
 
 [中文版](./README_zh.md)
 
+[Documentation index](../README.md)
+
 Agent Memory Evaluation is the AgentBench-based evaluation track in OmniMemEval. It measures the task performance of an agent runtime after a memory plugin is installed. The current implementation evaluates OpenClaw across five task domains and supports both plain agent runs and memory-plugin lifecycle runs.
 
-Results are recorded in [eval_res.md](./eval_res.md).
+Results are recorded in [results.md](./results.md). The current architecture
+and extension contracts are documented in [architecture.md](./architecture.md).
 
 ## Evaluation Protocols
 
@@ -300,4 +303,4 @@ Key files:
 - `result.json.memos_feedback_result`: plugin-side structured feedback status when enabled.
 - `memory_lifecycle.json`: clear/backup/restore lifecycle events.
 
-Recent evaluation results are recorded in [eval_res.md](./eval_res.md). Model service, external judge service, and embedding service status may affect per-sample rewards.
+Recent evaluation results are recorded in [results.md](./results.md). Model service, external judge service, and embedding service status may affect per-sample rewards.

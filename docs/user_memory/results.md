@@ -1,5 +1,8 @@
 # Benchmark Results
 
+[User Memory Evaluation guide](./README.md) ·
+[Documentation index](../README.md)
+
 This document provides a public result snapshot for OmniMemEval's current
 benchmark pipelines. The reproduced scores were generated under one evaluation
 harness so that memory backends are compared with the same data, prompts,
@@ -297,5 +300,5 @@ results/halumem/{LIB}-{VERSION}/
 ```
 
 Benchmark datasets are downloaded on demand and are not committed to this
-repository. See [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md) for dataset
+repository. See [THIRD_PARTY_NOTICES.md](../../THIRD_PARTY_NOTICES.md) for dataset
 license information.

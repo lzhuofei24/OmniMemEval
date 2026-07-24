@@ -82,8 +82,10 @@ huggingface-cli download EverMind-AI/EvoAgentBench \
 
 ## 结果
 
-- User Memory 公开结果快照：[docs/benchmark-results.md](./docs/benchmark-results.md)
-- AgentBench 评测结果：[docs/agent_memory/eval_res_zh.md](./docs/agent_memory/eval_res_zh.md)
+- User Memory 公开结果快照（英文）：[docs/user_memory/results.md](./docs/user_memory/results.md)
+- AgentBench 评测结果：[docs/agent_memory/results_zh.md](./docs/agent_memory/results_zh.md)
+
+文档索引：[docs/README_zh.md](./docs/README_zh.md)
 
 ## 目录结构
 
@@ -94,10 +96,9 @@ data/
   locomo/ longmemeval/ beam/  # User Memory benchmark 数据准备
   personamem_v2/ halumem/
 docs/
-  user_memory/                # User Memory Evaluation 中英文文档
-  agent_memory/               # Agent Memory Evaluation 中英文文档和结果
-  benchmark-results.md        # User Memory 公开结果快照
-  agentbench-migration-design.md # AgentBench 迁移设计文档
+  README.md / README_zh.md    # 文档索引
+  user_memory/                # User Memory 指南和结果
+  agent_memory/               # Agent Memory 指南、架构和结果
 env_examples/                 # 环境变量模板和参数说明
 scripts/
   agentbench/                 # AgentBench runner 实现

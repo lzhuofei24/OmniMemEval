@@ -8,6 +8,11 @@ Agent Memory Evaluation uses a separate template, `.env.agent`, for OpenClaw,
 judge, evaluation, and embedding credentials. This keeps agent-runtime settings
 separate from User Memory backend credentials such as `.env.memos`.
 
+Track guides:
+
+- [User Memory Evaluation](../docs/user_memory/README.md)
+- [Agent Memory Evaluation](../docs/agent_memory/README.md)
+
 ## Quick Start
 
 ```bash

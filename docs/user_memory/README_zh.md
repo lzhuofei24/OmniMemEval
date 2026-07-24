@@ -2,6 +2,8 @@
 
 [English](./README.md)
 
+[文档索引](../README_zh.md)
+
 本文档说明 OmniMemEval 的 User Memory Evaluation 评测线。该评测线通过统一 benchmark pipeline 和 adapter 层评估 memory backend API。用户可以通过 `--lib` 切换不同 memory backend，在同一套 benchmark 流程下对比主流 memory 产品、自托管 memory framework 和自定义 adapter。
 
 adapter 层通过 15 个入口覆盖 14 种主流 memory 方案，包括 MemOS、Mem0、Zep/Graphiti、Supermemory、EverOS、Letta、Hindsight、Cognee、Viking Memory、Memori、MemMachine、MemoryLake、Backboard.io 和 mem9。该评测线支持 LoCoMo、LongMemEval、BEAM、PersonaMem v2 和 HaluMem 5 个评测任务，覆盖长期记忆系统中几类关键能力：对话记忆、跨 session 更新、超长上下文检索、个性化偏好，以及在
@@ -191,7 +193,7 @@ Streaming 模式可配合 `--start-idx`、`--end-idx`、`--restart-unit`、
 
 ## Benchmark 结果
 
-公开评测结果见 [benchmark results](../benchmark-results.md)。该文档整理了
+公开评测结果见 [benchmark results（英文）](./results.md)。该文档整理了
 当前公开 benchmark 链路在 OmniMemEval 统一评测配置下复现的分数、context token
 指标、部署说明、公开参考分数和复现命令。
 
@@ -240,6 +242,7 @@ LoCoMo 评估长对话记忆、多跳推理和时序记忆。数据说明见
 
 LongMemEval 评估跨 session 长期记忆。OmniMemEval 通过共享 loader 读取
 `longmemeval_s_cleaned.json`，并对 ingestion 和 search 使用同一份清洗后的数据。
+数据说明见 [data/longmemeval/README.md](../../data/longmemeval/README.md)。
 
 ```bash
 ./scripts/run_lme_eval.sh --lib memos --env .env.memos
@@ -306,7 +309,10 @@ OmniMemEval/
 │   ├── longmemeval/
 │   └── personamem_v2/
 ├── docs/
-│   └── benchmark-results.md
+│   └── user_memory/
+│       ├── README.md
+│       ├── README_zh.md
+│       └── results.md
 ├── env_examples/
 ├── scripts/
 │   ├── client_factory/

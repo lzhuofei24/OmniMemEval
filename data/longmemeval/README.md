@@ -1,5 +1,7 @@
 # LongMemEval Dataset
 
+[User Memory Evaluation guide](../../docs/user_memory/README.md)
+
 LongMemEval is a comprehensive benchmark for evaluating **long-term interactive
 memory** in chat assistants, published by UCSB et al. It contains 500 carefully
 designed questions across six categories, covering information extraction,
