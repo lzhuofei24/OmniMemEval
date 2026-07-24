@@ -4,6 +4,9 @@ This file documents the public parameters used by the LoCoMo, LongMemEval,
 BEAM, PersonaMem v2, and HaluMem pipelines. Product-specific templates live in
 this directory as `.env.<client>`.
 
+Unless a product-specific table is present below, the corresponding
+`.env.<client>` template is the reference for that product's public settings.
+
 ## Runner Parameters
 
 | Parameter | Default | Applies to | Description |

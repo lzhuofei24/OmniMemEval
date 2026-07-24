@@ -2,6 +2,8 @@
 
 [中文版](./README_zh.md)
 
+[Documentation index](../README.md)
+
 This document covers the User Memory Evaluation track in OmniMemEval. This track evaluates memory backend APIs through a shared benchmark pipeline and a common adapter layer. Users can switch memory backends with `--lib` and compare mainstream memory products, self-hosted memory frameworks, and custom adapters under the same benchmark flow.
 
 The adapter layer covers 14 mainstream memory solutions through 15 adapter entries, including MemOS, Mem0, Zep/Graphiti, Supermemory, EverOS, Letta, Hindsight, Cognee, Viking Memory, Memori, MemMachine, MemoryLake, Backboard.io, and mem9. This track supports five benchmark tasks: LoCoMo, LongMemEval, BEAM, PersonaMem v2, and HaluMem. These tasks cover complementary
@@ -201,7 +203,7 @@ Replay later stages from an existing result directory:
 
 ## Benchmark Results
 
-See [benchmark results](../benchmark-results.md) for the public
+See [benchmark results](./results.md) for the public
 result snapshot reproduced under OmniMemEval's shared evaluation setup. The
 document includes reproduced scores, context-token metrics, deployment notes,
 published reference scores, and reproduction commands for the currently public
@@ -259,7 +261,9 @@ Replay later stages:
 
 LongMemEval evaluates long-term memory across sessions. OmniMemEval loads
 `longmemeval_s_cleaned.json` through a shared loader that removes known bad
-special tokens and applies the same cleaned data to ingestion and search.
+special tokens and applies the same cleaned data to ingestion and search. Data
+and license notes live in
+[data/longmemeval/README.md](../../data/longmemeval/README.md).
 
 ```bash
 ./scripts/run_lme_eval.sh --lib memos --env .env.memos
@@ -354,7 +358,10 @@ OmniMemEval/
 │   ├── longmemeval/
 │   └── personamem_v2/
 ├── docs/
-│   └── benchmark-results.md
+│   └── user_memory/
+│       ├── README.md
+│       ├── README_zh.md
+│       └── results.md
 ├── env_examples/
 ├── scripts/
 │   ├── client_factory/

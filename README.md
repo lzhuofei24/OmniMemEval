@@ -82,8 +82,10 @@ huggingface-cli download EverMind-AI/EvoAgentBench \
 
 ## Results
 
-- User Memory public result snapshot: [docs/benchmark-results.md](./docs/benchmark-results.md)
-- AgentBench evaluation results: [docs/agent_memory/eval_res.md](./docs/agent_memory/eval_res.md)
+- User Memory public result snapshot: [docs/user_memory/results.md](./docs/user_memory/results.md)
+- AgentBench evaluation results: [docs/agent_memory/results.md](./docs/agent_memory/results.md)
+
+Documentation index: [docs/README.md](./docs/README.md)
 
 ## Repository Layout
 
@@ -94,10 +96,9 @@ data/
   locomo/ longmemeval/ beam/  # User Memory benchmark data preparation
   personamem_v2/ halumem/
 docs/
-  user_memory/                # User Memory Evaluation guides (EN/ZH)
-  agent_memory/               # Agent Memory Evaluation guides and results (EN/ZH)
-  benchmark-results.md        # User Memory public result snapshot
-  agentbench-migration-design.md # AgentBench migration design notes
+  README.md / README_zh.md    # Documentation index
+  user_memory/                # User Memory guides and results
+  agent_memory/               # Agent Memory guides, architecture, and results
 env_examples/                 # Environment templates and parameter docs
 scripts/
   agentbench/                 # AgentBench runner implementation
