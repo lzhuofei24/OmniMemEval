@@ -382,8 +382,8 @@ class OpenClawAgentAdapter(AgentAdapter):
 
     def _build_cli_cmd(self, prompt: str, session: SessionSpec, timeout: int) -> list[str]:
         self._ensure_temp_config()
-        cmd = [
-            self._command(),
+        command = self._command()
+        args = [
             "agent",
             "--session-id",
             session.cli_session_id,
@@ -394,8 +394,27 @@ class OpenClawAgentAdapter(AgentAdapter):
             "--json",
         ]
         if self._runtime().get("local", False):
-            cmd.insert(2, "--local")
-        return cmd
+            args.insert(1, "--local")
+
+        # On Windows, npm-installed CLIs are usually ``openclaw.cmd``.  A
+        # direct ``Popen(["openclaw", ...])`` does not apply PATHEXT lookup,
+        # and therefore raises WinError 2 even though ``openclaw`` works in
+        # an interactive cmd.exe.  Resolve the wrapper and invoke it through
+        # cmd.exe while retaining a single argv string for the CLI arguments.
+        if os.name == "nt":
+            resolved = shutil.which(command) or command
+            suffix = Path(resolved).suffix.lower()
+            if suffix in {".cmd", ".bat"}:
+                command_line = subprocess.list2cmdline([resolved, *args])
+                return [
+                    os.environ.get("COMSPEC", "cmd.exe"),
+                    "/d",
+                    "/s",
+                    "/c",
+                    command_line,
+                ]
+            command = resolved
+        return [command, *args]
 
     def _get_subprocess_env(self, session: SessionSpec) -> dict[str, str]:
         self._ensure_temp_config()
@@ -597,7 +616,10 @@ class OpenClawAgentAdapter(AgentAdapter):
         if proc.poll() is not None:
             return
         try:
-            os.killpg(proc.pid, signal.SIGTERM)
+            if hasattr(os, "killpg"):
+                os.killpg(proc.pid, signal.SIGTERM)
+            else:
+                proc.terminate()
         except OSError:
             proc.terminate()
         try:
@@ -606,7 +628,10 @@ class OpenClawAgentAdapter(AgentAdapter):
         except subprocess.TimeoutExpired:
             pass
         try:
-            os.killpg(proc.pid, signal.SIGKILL)
+            if hasattr(os, "killpg"):
+                os.killpg(proc.pid, signal.SIGKILL)
+            else:
+                proc.kill()
         except OSError:
             proc.kill()
         try:
